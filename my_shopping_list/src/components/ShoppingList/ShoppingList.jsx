@@ -4,7 +4,7 @@
 export default function ShoppingList() {
 
 
-    return (<>
-   
-      </>)
+    return (<div className="shopping_list">
+        List: 
+    </div>)
 }
