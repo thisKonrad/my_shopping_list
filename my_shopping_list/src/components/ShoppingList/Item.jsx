@@ -4,7 +4,7 @@ import './shoppinglist.css';
 export default function Item({item}) {
 
     return (<li className="list_item">
-        <span>
+        <span style={item.packed ? {textDecoration:'line-through'} : {}}>
         {item.quantity}
         <span>  </span>
         {item.description}
