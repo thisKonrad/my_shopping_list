@@ -9,14 +9,16 @@ const initalItems = [
 ];
 
 
-export default function ShoppingList({items, onDeleteItem}) {
+export default function ShoppingList({items, onDeleteItem, onChecked}) {
 
     return (<div className="shopping_list">
             <ul>
             {items.map((item)=> <Item 
             key ={item.id} 
             item={item}
-            onDeleteItem={onDeleteItem}/>)} 
+            onDeleteItem={onDeleteItem}
+            onChecked={onChecked}
+            />)} 
             </ul>
             </div>)
 }

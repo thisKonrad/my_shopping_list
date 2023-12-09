@@ -22,6 +22,12 @@ export default function App() {
     console.log('click')
   }
 
+  function togglePackedItems(id){
+    setItems((items)=> items.map((item)=> 
+    item.id === id ? {...item, packed: !item.packed} : item
+    )); 
+  }
+
   function handleSubmit(e){
     e.preventDefault();
     if(!input){return}
@@ -60,7 +66,11 @@ export default function App() {
   handleChange={handleChange}
   quantity={quantity}
   input={input}/>
-  <ShoppingList items={items} onDeleteItem={deleteItems} />
-  <Statistics/>
+  <ShoppingList 
+  items={items} 
+  onDeleteItem={deleteItems} 
+  onChecked={togglePackedItems}
+  />
+  <Statistics items={items}/>
   </div>)
 }
