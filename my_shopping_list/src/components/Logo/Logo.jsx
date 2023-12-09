@@ -1,7 +1,9 @@
 /* :::: LOGO COMPONENT :::: */
-
+import './logo.css';
 
 export default function Logo() {
 
-    return (<h1>my shopping list</h1>)
+    return (<header className="logo_wrap">
+        <h1 className="title">my shopping list</h1>
+        </header>)
 }

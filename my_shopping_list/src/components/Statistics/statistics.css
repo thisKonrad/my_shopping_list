@@ -1,1 +1,12 @@
-@import './App.css'
+footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem;
+    min-width: 78%;
+    font-size: 1.4rem;
+    color: white;
+    background-color: var(--statisticBackground);
+}

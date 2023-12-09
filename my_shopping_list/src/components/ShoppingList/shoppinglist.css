@@ -1,1 +1,12 @@
-@import './App.css'
+.shopping_list{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    min-width: 100%;
+    min-height: 38rem;
+    margin-bottom: 1.4rem;
+    padding: 2rem;
+    background-color: var(--listBackground);
+}

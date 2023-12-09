@@ -1,33 +1,13 @@
-*{margin: 0; padding: 0; box-sizing: border-box;}
- 
-:root{
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 100%;
-  --backgroundBody: whitesmoke;
-  --backgroundApp: rgb(197, 255, 248);
-  --logoBackground: rgb(95, 189, 255);
-  --formBackground:rgb(120, 214, 198);
-  --listBackground:rgb(245, 252, 205);
-  --statisticBackground: rgb(123, 102, 255);
-}
- 
-body{
-  width: 100%;
-  height: 100%;
-  margin: 0em auto;
-  background: var(--backgroundBody);
-}
-
-#root {
+.app {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  min-width: 78%;
+  min-width: 78vw;
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   background-color: var(--backgroundApp);
-}
+} 

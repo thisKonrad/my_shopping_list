@@ -1,7 +1,29 @@
-body {
-  margin: 0;
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ 
+@font-face{
+  font-family: 'typewriter';
+  src:url('./TypewriterScribbled.woff')format("woff");;
+}
+
+:root{
+  font-family: 'typewriter',monospace;
+/*   font-family: 'Courier New', Courier, monospace; */
+  font-size: 100%;
+  --backgroundBody: whitesmoke;
+  --backgroundApp: rgb(197, 255, 248);
+  --logoBackground: rgb(95, 189, 255);
+  --formBackground:rgb(120, 214, 198);
+  --listBackground:rgb(245, 252, 205);
+  --statisticBackground: rgb(123, 102, 255);
+}
+ 
+body{
+  position: relative;
   display: flex;
-  place-items: center;
-  min-width: 78%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   min-height: 100vh;
+  margin: 0px auto;
+  background: gainsboro;
 }
