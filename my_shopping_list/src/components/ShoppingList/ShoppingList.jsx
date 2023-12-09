@@ -9,11 +9,14 @@ const initalItems = [
 ];
 
 
-export default function ShoppingList() {
+export default function ShoppingList({items, onDeleteItem}) {
 
     return (<div className="shopping_list">
             <ul>
-            {initalItems.map((item)=> <Item key ={item.id} item={item}/>)} 
+            {items.map((item)=> <Item 
+            key ={item.id} 
+            item={item}
+            onDeleteItem={onDeleteItem}/>)} 
             </ul>
             </div>)
 }

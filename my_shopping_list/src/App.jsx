@@ -10,9 +10,22 @@ export default function App() {
 
   const[input, setInput]= useState('Peter');
   const[quantity, setQuantity]= useState(1);
+  const[items,setItems]= useState([]);
+
+
+  function handleAddItems(item){
+    setItems((items)=>[...items, item]);
+  }
+
+  function deleteItems(id){
+    setItems((items)=> items.filter((item)=> item.id !== id))
+    console.log('click')
+  }
 
   function handleSubmit(e){
     e.preventDefault();
+    if(!input){return}
+
     const newItem ={
       quantity,
       input, 
@@ -20,12 +33,17 @@ export default function App() {
       packed:false,
     };
     console.log(newItem)
+
+    handleAddItems(newItem)
+    
+    setQuantity(1)
+    setInput('')
   }
 
   function handleQuantity(e){
     /* value gives always a string */
     setQuantity(Number(e.target.value))
-    console.log(typeof quantity)
+    console.log(quantity)
   }
 
   function handleChange(e){
@@ -42,7 +60,7 @@ export default function App() {
   handleChange={handleChange}
   quantity={quantity}
   input={input}/>
-  <ShoppingList/>
+  <ShoppingList items={items} onDeleteItem={deleteItems} />
   <Statistics/>
   </div>)
 }
