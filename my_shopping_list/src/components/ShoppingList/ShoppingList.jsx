@@ -13,7 +13,7 @@ export default function ShoppingList() {
 
     return (<div className="shopping_list">
             <ul>
-            {initalItems.map((item)=> <Item item={item}/>)} 
+            {initalItems.map((item)=> <Item key ={item.id} item={item}/>)} 
             </ul>
             </div>)
 }

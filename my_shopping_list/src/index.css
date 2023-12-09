@@ -6,8 +6,7 @@
 }
 
 :root{
-  font-family: 'typewriter',monospace;
-/*   font-family: 'Courier New', Courier, monospace; */
+  font-family: 'Courier New', Courier, monospace; 
   font-size: 100%;
   --backgroundBody: whitesmoke;
   --backgroundApp: rgb(197, 255, 248);
