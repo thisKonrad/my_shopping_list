@@ -1,35 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Logo from './components/Logo/Logo.jsx'
+import Form from './components/Form/Form.jsx'
+import ShoppingList from './components/ShoppingList/ShoppingList.jsx'
+import Statistics from './components/Statistics/Statistics.jsx'
+import { useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App() {
+
+  const[input, setInput]= useState('Peter');
+  const[quantity, setQuantity]= useState(1);
+  const[items,setItems]= useState([]);
+
+
+  function handleAddItems(item){
+    setItems((items)=>[...items, item]);
+  }
+
+  function deleteItems(id){
+    setItems((items)=> items.filter((item)=> item.id !== id))
+    console.log('click')
+  }
+
+  function togglePackedItems(id){
+    setItems((items)=> items.map((item)=> 
+    item.id === id ? {...item, packed: !item.packed} : item
+    )); 
+  }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    if(!input){return}
+
+    const newItem ={
+      quantity,
+      input, 
+      id: Date.now(),
+      packed:false,
+    };
+    console.log(newItem)
+
+    handleAddItems(newItem)
+    
+    setQuantity(1)
+    setInput('')
+  }
+
+  function handleQuantity(e){
+    /* value gives always a string */
+    setQuantity(Number(e.target.value))
+    console.log(quantity)
+  }
+
+  function handleChange(e){
+    setInput(e.target.value)
+    console.log(input)
+  }
+
+
+  return (<div className="app">
+  <Logo/>
+  <Form 
+  handleSubmit={handleSubmit} 
+  handleQuantity={handleQuantity}
+  handleChange={handleChange}
+  quantity={quantity}
+  input={input}/>
+  <ShoppingList 
+  items={items} 
+  onDeleteItem={deleteItems} 
+  onChecked={togglePackedItems}
+  />
+  <Statistics items={items}/>
+  </div>)
 }
-
-export default App
