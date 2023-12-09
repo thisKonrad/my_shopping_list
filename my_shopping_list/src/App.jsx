@@ -5,6 +5,7 @@ import ShoppingList from './components/ShoppingList/ShoppingList.jsx'
 import Statistics from './components/Statistics/Statistics.jsx'
 //import { useState } from 'react'
 
+
 export default function App() {
 
   return (<div className="app">
