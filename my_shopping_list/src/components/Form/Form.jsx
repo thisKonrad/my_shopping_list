@@ -19,6 +19,7 @@ export default function Form({
         (num)=> <option value={num} key={num}>{num}</option>)}
     </select>
     <input 
+    autoFocus
     name="article_input" 
     value={input} 
     onChange={handleChange}
