@@ -35,5 +35,17 @@
 }
 
 .sort_wrap{
+    position: fixed;
+    top: 90vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: 78%;
+    background-color: grey;
+}
 
+.clear_button{
+    width: 6rem;
 }

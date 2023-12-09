@@ -3,17 +3,12 @@ import './shoppinglist.css';
 import Item from './Item.jsx';
 import {useState} from 'react';
 
-/* const initalItems = [
-    {id:1, description:'bananas',quantity:12, packed:false,},
-    {id:2, description:'tomatoes',quantity:8, packed:false,},
-    {id:3, description:'toilet paper',quantity:1, packed:true,}
-];
- */
 
 export default function ShoppingList({
     items, 
     onDeleteItem, 
-    onChecked}) {
+    onChecked,
+    onClear}) {
 
     const[sorted,setSort]= useState('default');
 
@@ -47,6 +42,9 @@ export default function ShoppingList({
                 <option value="name">Sort by article name</option>
                 <option value="packed">Sort by packed state</option>
                 </select>
+                <button onClick={onClear}className="clear_button">
+                    Clear All
+                </button>
             </div>
             </div>)
 }

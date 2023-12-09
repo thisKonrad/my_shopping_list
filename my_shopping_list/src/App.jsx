@@ -13,20 +13,8 @@ export default function App() {
   const[items,setItems]= useState([]);
 
 
-
   function handleAddItems(item){
     setItems((items)=>[...items, item]);
-  }
-
-  function deleteItems(id){
-    setItems((items)=> items.filter((item)=> item.id !== id))
-    console.log('click')
-  }
-
-  function togglePackedItems(id){
-    setItems((items)=> items.map((item)=> 
-    item.id === id ? {...item, packed: !item.packed} : item
-    )); 
   }
 
   function handleSubmit(e){
@@ -40,12 +28,11 @@ export default function App() {
       id: Date.now(),
       packed:false,
     };
-    console.log(newItem)
 
     handleAddItems(newItem)
     
     setQuantity(1)
-    setInput('')
+    setInput('').focus()
   }
 
   function handleQuantity(e){
@@ -54,9 +41,21 @@ export default function App() {
     console.log(quantity)
   }
 
+  function deleteItems(id){
+    setItems((items)=> items.filter((item)=> item.id !== id))
+  }
+
+  function togglePackedItems(id){
+    setItems((items)=> items.map((item)=> 
+    item.id === id ? {...item, packed: !item.packed} : item)); 
+  }
+
   function handleChange(e){
     setInput(e.target.value)
-    console.log(input)
+  }
+
+  function clearAll(){
+    setItems([])
   }
 
   return (<div className="app">
@@ -71,6 +70,7 @@ export default function App() {
   items={items} 
   onDeleteItem={deleteItems} 
   onChecked={togglePackedItems}
+  onClear={clearAll}
   />
   <Statistics items={items}/>
   </div>)
