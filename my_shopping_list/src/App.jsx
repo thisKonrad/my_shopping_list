@@ -8,9 +8,10 @@ import { useState } from 'react'
 
 export default function App() {
 
-  const[input, setInput]= useState('Peter');
+  const[input, setInput]= useState('');
   const[quantity, setQuantity]= useState(1);
   const[items,setItems]= useState([]);
+
 
 
   function handleAddItems(item){
@@ -30,6 +31,7 @@ export default function App() {
 
   function handleSubmit(e){
     e.preventDefault();
+
     if(!input){return}
 
     const newItem ={
@@ -56,7 +58,6 @@ export default function App() {
     setInput(e.target.value)
     console.log(input)
   }
-
 
   return (<div className="app">
   <Logo/>
