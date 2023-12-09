@@ -11,6 +11,7 @@ export default function Form({
     return (<form className="add_to_form" onSubmit={handleSubmit}>
     <h3>Lets Go Shopping:</h3>
     <select 
+    className="select_quantity"
     name="quantity_select" 
     value={quantity}
     onChange={handleQuantity}>
@@ -20,12 +21,17 @@ export default function Form({
     </select>
     <input 
     autoFocus
+    className='article_input'
     name="article_input" 
     value={input} 
     onChange={handleChange}
     type="text" 
     placeholder="article">
     </input>
-    <button name="add_button">Add</button>
+    <button
+    className='add_button' 
+    name="add_button">
+        Add
+    </button>
    </form>)
 }

@@ -1,20 +1,27 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
  
 @font-face{
-  font-family: 'typewriter';
-  src:url('./TypewriterScribbled.woff')format("woff");;
+  font-family: 'chalk_pigment';
+  src:url('/public/pigment-DEMO.woff')format("woff");
 }
 
+
 :root{
-  font-family: 'Courier New', Courier, monospace; 
+  font-family: 'chalk_pigment', monospace; 
   font-size: 100%;
   --backgroundBody: whitesmoke;
-  --backgroundApp: rgb(197, 255, 248);
-  --logoBackground: rgb(95, 189, 255);
-  --formBackground:rgb(120, 214, 198);
-  --listBackground:rgb(245, 252, 205);
-  --statisticBackground: rgb(123, 102, 255);
-  --listItem: rgb(95, 189, 255);
+  --backgroundApp: rgb(250, 240, 230);
+  --logoBackground: rgb(37, 34, 46);
+  --formBackground:rgb(92, 84, 112);
+  --listBackground:rgb(185, 180, 199);
+  --statisticBackground: rgb(53, 47, 68);
+  --listItem: rgb(92, 84, 112);
+  --sortWrap: rgb(71, 66, 83);
+  --inputBackground: rgb(53, 47, 68);
+  --addButton: slateblue;
+  --clearButton: red;
+  --mainWidth: 84rem;
+
 }
  
 body{
