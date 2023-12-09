@@ -37,12 +37,17 @@ export default function ShoppingList({
             />)} 
             </ul>
             <div className="sort_wrap">
-                <select value={sorted} onChange={(e)=>{setSort(e.target.value), console.log(sorted)}}>
+                <select 
+                className='sort_select'
+                value={sorted} 
+                onChange={(e)=>{setSort(e.target.value)}}>
                 <option value="default">Sort by default order</option>
                 <option value="name">Sort by article name</option>
                 <option value="packed">Sort by packed state</option>
                 </select>
-                <button onClick={onClear}className="clear_button">
+                <button 
+                onClick={onClear}
+                className="clear_button">
                     Clear All
                 </button>
             </div>
