@@ -1,6 +1,7 @@
 /* :::: LOGO COMPONENT :::: */
 import './logo.css';
 
+
 export default function Logo() {
 
     return (<header className="logo_wrap">

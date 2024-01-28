@@ -1,6 +1,7 @@
 /* :::: FORM COMPONENT :::: */
 import './form.css';
 
+
 export default function Form({
     handleSubmit, 
     handleChange, 

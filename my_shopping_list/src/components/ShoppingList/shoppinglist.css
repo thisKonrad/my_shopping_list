@@ -1,3 +1,4 @@
+/* :::: shopping list styles :::: */
 .shopping_list{
     display:flex;
     flex-direction: column;
@@ -8,7 +9,6 @@
     min-width: 100%;
     min-height: 60vh;
     margin-bottom: 6rem;
-    /* padding: 2rem; */
     background-color: var(--listBackground);
 }
 
