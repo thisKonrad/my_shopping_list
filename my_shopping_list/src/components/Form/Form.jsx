@@ -27,6 +27,7 @@ export default function Form({
     value={input} 
     onChange={handleChange}
     type="text" 
+    autoComplete='off'
     placeholder="article">
     </input>
     <button
