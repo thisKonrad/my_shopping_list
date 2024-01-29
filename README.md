@@ -1,6 +1,7 @@
 
 here i build up a little fancy shopping list.
-with react in a vite environment.
+
+with react and vite.
 
 you have a search function, a sort function
 and a status bar that shows you the status of 
